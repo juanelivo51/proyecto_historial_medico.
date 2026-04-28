@@ -1,4 +1,4 @@
-# proyecto_historial_medico #
+# proyecto_historial_medico
 
 historial_medico = []
 
@@ -25,7 +25,7 @@ def mostrar_pacientes():
         return
 
     for i, paciente in enumerate(historial_medico, start=1):
-        print(f"\nPaciente {i}")
+        print(f"\n--- Paciente {i} ---")
         print(f"Nombre: {paciente['nombre']}")
         print(f"Edad: {paciente['edad']}")
         print(f"Género: {paciente['genero']}")
@@ -34,17 +34,17 @@ def mostrar_pacientes():
 
 def buscar_paciente():
     nombre_buscar = input("Ingrese el nombre del paciente a buscar: ")
-    encontrado = False
 
     for paciente in historial_medico:
         if paciente["nombre"].lower() == nombre_buscar.lower():
             print("\nPaciente encontrado:")
-            print(paciente)
-            encontrado = True
-            break
+            print(f"Nombre: {paciente['nombre']}")
+            print(f"Edad: {paciente['edad']}")
+            print(f"Género: {paciente['genero']}")
+            print(f"Diagnóstico: {paciente['diagnostico']}")
+            return
 
-    if not encontrado:
-        print("Paciente no encontrado.\n")
+    print("Paciente no encontrado.\n")
 
 
 def menu():
@@ -52,11 +52,7 @@ def menu():
         print("\n--- MENÚ HISTORIAL MÉDICO ---")
         print("1. Agregar paciente")
         print("2. Mostrar pacientes")
-        print("\nPaciente encontrado:")
-        print(f"Nombre: {paciente['nombre']}")
-        print(f"Edad: {paciente['edad']}")
-        print(f"Género: {paciente['genero']}")
-        print(f"Diagnóstico: {paciente['diagnostico']}")
+        print("3. Buscar paciente")
         print("4. Salir")
 
         opcion = input("Seleccione una opción: ")
