@@ -52,7 +52,11 @@ def menu():
         print("\n--- MENÚ HISTORIAL MÉDICO ---")
         print("1. Agregar paciente")
         print("2. Mostrar pacientes")
-        print("3. Buscar paciente")
+        print("\nPaciente encontrado:")
+        print(f"Nombre: {paciente['nombre']}")
+        print(f"Edad: {paciente['edad']}")
+        print(f"Género: {paciente['genero']}")
+        print(f"Diagnóstico: {paciente['diagnostico']}")
         print("4. Salir")
 
         opcion = input("Seleccione una opción: ")
